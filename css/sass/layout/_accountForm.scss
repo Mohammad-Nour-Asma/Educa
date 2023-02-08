@@ -1,0 +1,104 @@
+.acc-form {
+  top: 0;
+  padding: 1rem;
+  width: 35rem;
+  position: fixed;
+  right: -100%;
+  transition: 0.4s linear;
+  &.active {
+    right: 0;
+    box-shadow: 0 0 0 100vw rgb(0 0 0 / 80%);
+  }
+  height: 100%;
+  z-index: 10000;
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .buttons {
+    .Mybtn {
+      @extend %main-button;
+      margin: 0 0.5rem;
+      display: inline-block;
+      cursor: pointer;
+      &.active {
+        background-color: $green;
+        color: $white;
+      }
+    }
+    margin-bottom: 1.5rem;
+  }
+  .form {
+    border: $border;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    &.hide {
+      display: none;
+    }
+    form {
+      @include graph-text(1.5rem);
+      h3 {
+        @include title-text(2.5rem);
+        text-transform: uppercase;
+      }
+      input {
+        width: 100%;
+        display: block;
+        border: $border;
+        margin: 1rem 0;
+        padding: 1rem;
+
+        &:focus {
+          outline: none;
+        }
+        &[type="submit"] {
+          @extend %main-button;
+        }
+      }
+      .flex {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .check {
+          label {
+            white-space: nowrap;
+          }
+          input {
+            width: fit-content;
+            margin-top: 11px;
+          }
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        a {
+          @include graph-text(1.5rem);
+
+          &:hover {
+            color: $green;
+            text-decoration: underline !important;
+          }
+        }
+      }
+    }
+  }
+  .close-icon {
+    // display: none;
+
+    display: block;
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
+    font-size: 4rem;
+    cursor: pointer;
+    font-weight: 900;
+    cursor: pointer;
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+}

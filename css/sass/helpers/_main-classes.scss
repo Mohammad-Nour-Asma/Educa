@@ -1,0 +1,56 @@
+.show-menu {
+  right: 0;
+
+  visibility: visible;
+}
+.hide-menu {
+  @include media(small) {
+    right: 100%;
+    visibility: hidden;
+  }
+}
+.layout {
+  @include layout(black, 0.4);
+}
+
+%main-button {
+  padding: 1rem 3rem;
+  color: $green;
+  background-color: $white;
+  border: 1px $green solid;
+  font-size: 1.8rem;
+  &:hover {
+    color: $white;
+    background-color: $green;
+  }
+}
+.main-heading {
+  @include title-text(3.5rem);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.main-title {
+  background-image: url(/images/heading-bg.jpg);
+  padding: 5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  h2 {
+    @include title-text(4rem);
+  }
+  span {
+    font-size: 2rem;
+    color: $light_color;
+    span {
+      a {
+        color: $green;
+      }
+    }
+  }
+}
+.hide {
+  display: none;
+}

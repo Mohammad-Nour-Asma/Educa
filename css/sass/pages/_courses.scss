@@ -1,0 +1,71 @@
+.courses {
+  padding: 3rem 0;
+  .container {
+    @include grid(30rem);
+    .box2 {
+      text-align: center;
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+      .image {
+        overflow: hidden;
+        position: relative;
+        img {
+          max-width: 100%;
+        }
+        span {
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          background-color: $white;
+          padding: 0.4rem 1rem;
+          color: $black;
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+      }
+      .info {
+        padding: 2rem;
+        border: $border;
+        border-top-color: transparent;
+        padding-bottom: 0;
+        h3 {
+          @include title-text(2.2rem);
+        }
+        p {
+          @include graph-text(1.5rem);
+          margin: 1rem 0;
+        }
+        a {
+          @extend %main-button;
+          padding: 0.7rem 2.5rem;
+          display: block;
+          width: fit-content;
+          margin: 0.4rem auto;
+        }
+        .foot {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.6rem;
+          color: $light_color;
+          margin-top: 1.5rem;
+          padding: 1.2rem;
+          border-top: $border;
+          i {
+            color: $green;
+            margin-right: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+  .show-more {
+    @extend %main-button;
+    display: block;
+    margin: 4rem auto;
+    width: fit-content;
+  }
+}

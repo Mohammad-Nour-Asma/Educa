@@ -1,0 +1,50 @@
+@mixin title-text($size) {
+  font-size: $size;
+  text-transform: capitalize;
+  color: $black;
+}
+@mixin graph-text($size) {
+  font-size: $size;
+  color: $light_color;
+  line-height: 2;
+}
+
+@mixin background($path) {
+  background-image: url($path);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+@mixin grid($num) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($num, 1fr));
+  gap: 2rem;
+}
+// Media Quires
+@mixin media($size) {
+  @if $size == small {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if($size==medium) {
+    @media (max-width: 991px) and(min-width:768px) {
+      @content;
+    }
+  } @else if($size == large) {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+}
+@mixin layout($color, $opacity) {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: $opacity;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $color;
+}

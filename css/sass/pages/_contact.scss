@@ -1,0 +1,132 @@
+.touch {
+  padding: 4rem 0;
+  .container {
+    .boxes {
+      margin-bottom: 2.5rem;
+      @include grid(20rem);
+      .box {
+        padding: 2.5rem;
+        text-align: center;
+        border: $border;
+        background-color: $light-green;
+
+        span {
+          display: block;
+          @include graph-text(1.5rem);
+          &:first-of-type {
+            @include title-text(2rem);
+            font-weight: 600;
+          }
+        }
+        i {
+          font-size: 2rem;
+          width: 6rem;
+          height: 6rem;
+          background-color: $green;
+          color: $white;
+          border-radius: 50%;
+          line-height: 6rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    .form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .image {
+        flex-basis: 49%;
+        img {
+          max-width: 100%;
+        }
+      }
+      form {
+        flex-basis: 49%;
+        padding: 1.8rem;
+        border: $border;
+        @include media(small) {
+          flex-direction: column;
+        }
+        h2 {
+          @include title-text(3rem);
+          font-weight: 600;
+        }
+        input {
+          display: block;
+          border: $border;
+          padding: 0.9rem;
+          margin: 1rem 0;
+          font-size: 1.8rem;
+
+          &:focus {
+            outline: none;
+          }
+          &:not([type="submit"]) {
+            width: 100%;
+          }
+          &[type="submit"] {
+            @extend %main-button;
+          }
+          &:focus {
+            background-color: $green;
+            color: $white;
+            &::placeholder {
+              color: $white;
+            }
+          }
+        }
+        textarea {
+          width: 100%;
+          font-size: 1.8rem;
+          padding: 1rem;
+          height: 12rem;
+          resize: none;
+          border: $border;
+          &:focus {
+            outline: none;
+          }
+          &:focus {
+            background-color: $green;
+            color: $white;
+            &::placeholder {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.question {
+  .accordion-item {
+    margin: 2rem 0;
+    border: $border;
+  }
+  .accordion-button {
+    padding: 1.3rem;
+    font-size: 2rem;
+    box-shadow: none;
+    &[aria-expanded="true"] {
+      background-color: $green;
+      color: $white;
+    }
+    &:after {
+      width: 1.95rem;
+      height: 1.95rem;
+      background-size: 1.95rem;
+    }
+  }
+  .accordion-body {
+    line-height: 2;
+    color: #777;
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+}
+.logos {
+  margin: 4rem 0;
+  text-align: center;
+  img {
+    user-select: none;
+  }
+}
